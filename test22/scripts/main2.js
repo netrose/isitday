@@ -41,6 +41,5 @@ function getdata() {
 			req2.send();
 		}
 
-    	document.getElementById("startScreen_mobiletextarea_1").disabled = true;
-    	document.getElementById("startScreen_mobiletextarea_1").value = "I don't know.";
+    	document.getElementById("startScreen_mobiletextarea_1").innerHTML = "I don't know.";
 }
