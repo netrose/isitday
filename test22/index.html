@@ -14,123 +14,52 @@
 
     <script src="scripts/login.js" type="text/javascript"></script>
     <script src="scripts/location.js" type="text/javascript"></script>
+    <script type="text/javascript" src="scripts/main2.js"></script>
 </head>
-<body>
+<body onload="getdata()">
 
-    <!--Home-->
-    <div id="page-home" data-role="page">
-
-        <!--Header-->
-        <div data-role="header" data-position="fixed">
-            <h1>Home!</h1>
-        </div>
-
-        <!--Content-->
-        <div data-role="content">
-            <h1>Welcome to Telerik AppBuilder!</h1>
-            <p>
-                Telerik AppBuilder&trade; enables you to build cross-platform device applications regardless of your
-                    development platform by combining the convenience of a local development toolset with the
-                    power and flexibility of the cloud.
-            </p>
-        </div>
-        <div class="nav">
-            <ul data-role="listview">
-                <li>
-                    <a href="#page-ui-interaction" data-transition="slide">UI Interaction Example</a>
-                </li>
-                <li>
-                    <a href="#page-location" data-transition="slide">Location Example</a>
-                </li>
-            </ul>
-        </div>
-
-        <!--Footer-->
-        <div data-role="footer" data-position="fixed" data-id="oneFooter">
-            <span class="footerText">Built with Telerik AppBuilder&trade;</span>
-        </div>
-
-    </div>
-
-    <!--UI interaction-->
-    <div id="page-ui-interaction" data-role="page" data-add-back-btn="true">
-
-        <!--Header-->
-        <div data-role="header" data-position="fixed">
-            <h1>Login</h1>
-        </div>
-
-        <!--Content-->
-        <div data-role="content">
-            <div id="login-wrap">
-                <form data-ajax="false" id="login-form">
-                    <h3 id="login-text">Enter your credentials:</h3>
-                    <div>
-                        <input id="login-username" type="text" placeholder="Username" />
-                        <input id="login-password" type="password" placeholder="Password" />
-                    </div>
-
-                    <div class="buttons ui-bar">
-                        <div>
-                            <div class="left">
-                                <input type="submit" id="login" data-icon="check" data-inline="true" class="left" value="Login" />
-                            </div>
-                            <div class="right">
-                                <button id="login-reset" data-icon="delete" data-inline="true" class="right">Reset</button>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <div id="logout-wrap">
-                <div>
-                    <h1 class="welcome">Welcome, <span id="logout-username"></span>!
-                    </h1>
+        <div data-role="page" style="min-height:800px;" dsid="startScreen" id="startScreen"
+        class="type-interior" data-theme="b">
+<!--            !-- mobileheader1 --
+            <div data-role="header" data-position="fixed" data-add-back-btn="false" data-back-btn-text="Back"
+            data-theme="b" name="mobileheader1" id="startScreen_mobileheader1" class="startScreen_mobileheader1">
+                <h1 dsid="mobileheader1">
+                    Is it DAY outside???
+                </h1>
+            </div> -->
+                <!-- dayornightlbl -->
+                <div name="dayornightlbl" id="startScreen_dayornightlbl" dsid="dayornightlbl" data-role="ui-field-contain" class="startScreen_dayornightlbl">
+                <textarea name="mobiletextarea_1" id="startScreen_mobiletextarea_1" tabindex="1"
+                    dsid="mobiletextarea_1" data-theme="b" placeholder="" class="startScreen_dayornightlbl">
+</textarea>
                 </div>
-
-                <div class="buttons">
-                    <div data-role="controlgroup" data-type="horizontal">
-                        <button id="logout" data-icon="back">Logout</button>
-                    </div>
+                <!-- spacer_6 -->
+                <div id="startScreen_spacer_6" data-role="ui-field-contain" dsid="spacer_6" class='mobilespacer startScreen_spacer_6'>
+                </div>            
+            <!-- mobilecontainer1 -->
+            <div data-role="content" id="startScreen_mobilecontainer1" name="mobilecontainer1"
+            class="startScreen_mobilecontainer1 ui-content" dsid="mobilecontainer1" data-theme="b">
+                <!-- mobiletextarea_3 -->
+                <div data-role="ui-field-contain" class="startScreen_mobiletextarea_3 ">
+                    <textarea name="mobiletextarea_3" id="startScreen_mobiletextarea_3" tabindex="2"
+                    dsid="mobiletextarea_3" data-theme="b" placeholder="" class="startScreen_mobiletextarea_3">
+</textarea>
+                </div>
+                <!-- mobiletextarea_4 -->
+                <div data-role="ui-field-contain" class="startScreen_mobiletextarea_4 ">
+                    <textarea name="mobiletextarea_4" id="startScreen_mobiletextarea_4" tabindex="3"
+                    dsid="mobiletextarea_4" data-theme="b" placeholder="" class="startScreen_mobiletextarea_4">
+</textarea>
                 </div>
             </div>
-        </div>
-
-        <!--Footer-->
-        <div data-role="footer" data-position="fixed" data-id="oneFooter">
-            <span class="footerText">Built with Telerik AppBuilder&trade;</span>
-        </div>
-
-    </div>
-
-    <!--Location-->
-    <div id="page-location" data-role="page" data-add-back-btn="true">
-
-        <!--Header-->
-        <div id="page-location-header" data-role="header" data-position="fixed">
-            <h1>Location</h1>
-        </div>
-
-        <!--Content-->
-        <div id="page-location-content" data-role="content">
-            <div id="map-search-wrap">
-                <a id="map-navigate-home"></a>
-                <form data-ajax="false" onsubmit="return false;">
-                    <input id="map-address" type="search" data-role="none" placeholder="Address" />
-                    <input id="map-search" type="submit" value="" data-role="none" />
-                </form>
+            <!-- mobilefooter1 -->
+            <div data-role="footer" data-position="fixed" class="startScreen_mobilefooter1"
+            name="mobilefooter1" dsid="mobilefooter1" id="startScreen_mobilefooter1" data-theme="b">
             </div>
-            <div id="map-canvas"></div>
         </div>
-
-        <!--Footer-->
-        <div id="page-location-footer" data-role="footer" data-position="fixed" data-id="oneFooter">
-            <span class="footerText">Built with Telerik AppBuilder&trade;</span>
-        </div>
-
-    </div>
+    
+    
+    
     <script type="text/javascript">
         document.addEventListener('deviceready', function () {
             navigator.splashscreen.hide();

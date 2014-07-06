@@ -1,3 +1,35 @@
+/* mobilecontainer1 */
+.ui-content.startScreen_mobilecontainer1 {
+	padding: 15px 15px 15px 15px;
+}
+/* mobiletextarea_3 */
+.startScreen_mobiletextarea_3 {
+	margin: 4px 0px 4px 0px;
+}
+/* mobiletextarea_4 */
+.startScreen_mobiletextarea_4 {
+	margin: 4px 0px 4px 0px;
+}
+/* mobilefooter1 */
+.startScreen_mobilefooter1 {
+	min-height:38px;
+}
+/* dayornightlbl */
+.startScreen_dayornightlbl {
+	text-decoration: none; font-weight: bold; text-align: center; font-family: Helvetica; font-size: 24px;
+	margin: 4px 0px 4px 0px;
+	word-wrap: break-word;
+	white-space: normal;
+    border: none;
+    background:transparent;
+    -moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+    -webkit-box-sizing: none;
+	-moz-box-sizing: none:
+	-ms-box-sizing: none;
+	box-sizing: none;
+}
 .ui-footer {
     text-align: center;
     padding: 0.3em;
