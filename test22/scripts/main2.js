@@ -23,10 +23,16 @@ function getdata() {
 			res2 = req2.responseText;
 			dawnstart = res2.indexOf("</civil>");
 			duskstart = res2.lastIndexOf("</civil>");
+            sunrise = res2.indexOf("</sunrise>");
+            sunset = res2.indexOf("</sunset>");
             twiciv1 = "Dawn: " + res2.substr(dawnstart-8,8);
             twiciv2 = "Dusk: " + res2.substr(duskstart-8,8);
+            sunup = "Sunrise: " + res2.substr(sunrise-8,8);
+            sundown = "Sunrise: " + res2.substr(sunset-8,8);
 			document.getElementById("startScreen_mobiletextarea_3").value = (twiciv1);
 			document.getElementById("startScreen_mobiletextarea_4").value = (twiciv2);
+            document.getElementById("details_sunrisetextarea").value = (sunup);
+            document.getElementById("details_sunsettextarea").value = (sundown);
 
 		};
 		
@@ -42,4 +48,5 @@ function getdata() {
 		}
 
     	document.getElementById("startScreen_mobiletextarea_1").innerHTML = "I don't know.";
+    	document.getElementById("details_header").innerHTML = "Details Page";
 }

@@ -2,9 +2,13 @@
 .ui-content.startScreen_mobilecontainer1 {
 	padding: 15px 15px 15px 15px;
 }
+/*More details sunset*/
+.details_mobiletextarea_6{
+    margin: 4px 0px 4px 0px;
+}
 /*More details sunrise*/
 .details_mobiletextarea_5{
-    margin: 4px 0px 4px 0px
+    margin: 4px 0px 4px 0px;
 }
 /* mobiletextarea_3 */
 .startScreen_mobiletextarea_3 {
