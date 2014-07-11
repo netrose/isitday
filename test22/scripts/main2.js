@@ -21,10 +21,10 @@ function getdata() {
 			return;
 		}
 			res2 = req2.responseText;
-			sunrisestart = res2.indexOf("</civil>");
-			sunsetstart = res2.lastIndexOf("</civil>");
-            twiciv1 = "Dawn: " + res2.substr(sunrisestart-8,8);
-            twiciv2 = "Dusk: " + res2.substr(sunsetstart-8,8);
+			dawnstart = res2.indexOf("</civil>");
+			duskstart = res2.lastIndexOf("</civil>");
+            twiciv1 = "Dawn: " + res2.substr(dawnstart-8,8);
+            twiciv2 = "Dusk: " + res2.substr(duskstart-8,8);
 			document.getElementById("startScreen_mobiletextarea_3").value = (twiciv1);
 			document.getElementById("startScreen_mobiletextarea_4").value = (twiciv2);
 
