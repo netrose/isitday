@@ -3,7 +3,8 @@ function getdata() {
     		var currentTime = new Date()
     		var hours = currentTime.getHours();
     		var minutes = currentTime.getMinutes();
-
+    		var sunrisehour
+			var sunriseminute
 		req1 = new XMLHttpRequest();
 		req2 = new XMLHttpRequest();
 		
@@ -50,15 +51,16 @@ function getdata() {
 			req2.open('GET','http://www.corsproxy.com/www.earthtools.org/sun/'+parm1+'/'+parm2+'/'+day+'/'+month+'/99/1');
 			req2.send();
 		}
-    	delay(2000);
-		if (hours > sunrisehour && minutes > sunriseminute){
-            document.getElementById("mobiletextarea_1").innerHTML = "It is day!";
+    	window.onload = dayornight()
+    	function dayornight(){if (hours > sunrisehour && minutes > sunriseminute){
+            document.getElementById("startScreen_mobileheader_2").innerHTML = "It is day!";
             
         }
     	else{
-            document.getElementById("mobiletextarea1").innerHTML = "It is night!";
+            document.getElementById("startScreen_mobileheader_2").innerHTML = "It is night!";
             
             
-        }
+        }}
+		
     	document.getElementById("details_header").innerHTML = "Details Page";
 }
