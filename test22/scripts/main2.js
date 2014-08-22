@@ -51,7 +51,7 @@ function getdata() {
 			req2.open('GET','http://www.corsproxy.com/www.earthtools.org/sun/'+parm1+'/'+parm2+'/'+day+'/'+month+'/99/1');
 			req2.send();
 		}
-    	window.onload = dayornight()
+    	setTimeout(dayornight, 2000);
     	function dayornight(){if (hours > sunrisehour && minutes > sunriseminute){
             document.getElementById("startScreen_mobileheader_2").innerHTML = "It is day!";
             
