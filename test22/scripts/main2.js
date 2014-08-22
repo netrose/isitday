@@ -1,5 +1,8 @@
 function getdata() {
     		var req1, req2, res1, res2, lat1, lon1;
+    		var currentTime = new Date()
+    		var hours = currentTime.getHours();
+    		var minutes = currentTime.getMinutes();
 
 		req1 = new XMLHttpRequest();
 		req2 = new XMLHttpRequest();
@@ -28,15 +31,16 @@ function getdata() {
             twiciv1 = "Dawn: " + res2.substr(dawnstart-8,8);
             twiciv2 = "Dusk: " + res2.substr(duskstart-8,8);
             sunup = "Sunrise: " + res2.substr(sunrise-8,8);
-            sundown = "Sunrise: " + res2.substr(sunset-8,8);
-			document.getElementById("startScreen_mobiletextarea_3").value = (twiciv1);
-			document.getElementById("startScreen_mobiletextarea_4").value = (twiciv2);
-            document.getElementById("details_sunrisetextarea").value = (sunup);
-            document.getElementById("details_sunsettextarea").value = (sundown);
-
+            sundown = "Sunset: " + res2.substr(sunset-8,8);
+			document.getElementById("startScreen_mobiletextarea_3").value = (sunup);
+			document.getElementById("startScreen_mobiletextarea_4").value = (sundown);
+            document.getElementById("details_sunrisetextarea").value = (twiciv1);
+            document.getElementById("details_sunsettextarea").value = (twiciv2);
+			sunrisehour = res2.substr(sunrise-8,2);
+            sunriseminute = res2.substr(sunrise-5,2);
 		};
 		
-		req1.open('GET','https://freegeoip.net/json/');
+		req1.open('GET','http://206.196.111.56:8080/json/');
 		req1.send();
 
 		function suntime(parm1, parm2) {
@@ -46,7 +50,15 @@ function getdata() {
 			req2.open('GET','http://www.corsproxy.com/www.earthtools.org/sun/'+parm1+'/'+parm2+'/'+day+'/'+month+'/99/1');
 			req2.send();
 		}
-
-    	document.getElementById("startScreen_mobiletextarea_1").innerHTML = "I don't know.";
+    	delay(2000);
+		if (hours > sunrisehour && minutes > sunriseminute){
+            document.getElementById("mobiletextarea_1").innerHTML = "It is day!";
+            
+        }
+    	else{
+            document.getElementById("mobiletextarea1").innerHTML = "It is night!";
+            
+            
+        }
     	document.getElementById("details_header").innerHTML = "Details Page";
 }

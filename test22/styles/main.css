@@ -2,14 +2,34 @@
 .ui-content.startScreen_mobilecontainer1 {
 	padding: 15px 15px 15px 15px;
 }
-/*More details sunset*/
-.details_mobiletextarea_6{
+
+.details_footer2{
+    min-height:38px;
+    margin: 5px 5px 0px -7px;
+}
+/*Details page header*/
+.details_header{
     margin: 4px 0px 4px 0px;
+    font-size: 5;
+    -webkit-appearance:none;
+    -moz-appearance:none; 
+    appearance:none;
+    text-decoration: none; font-weight: bold; text-align: center; font-family: Helvetica; font-size: 24px;
+	margin: 4px 0px 4px 0px;
+	word-wrap: break-word;
+	white-space: normal;
+    border: none;
+    background:transparent;
+    -moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+    -webkit-box-sizing: none;
+	-moz-box-sizing: none;
+	-ms-box-sizing: none;
+	box-sizing: none;
 }
 /*More details sunrise*/
-.details_mobiletextarea_5{
-    margin: 4px 0px 4px 0px;
-}
+
 /* mobiletextarea_3 */
 .startScreen_mobiletextarea_3 {
 	margin: 4px 0px 4px 0px;
@@ -21,6 +41,7 @@
 /* mobilefooter1 */
 .startScreen_mobilefooter1 {
 	min-height:38px;
+    margin: 5px 5px 0px -7px;
 }
 /* dayornightlbl */
 .startScreen_dayornightlbl {

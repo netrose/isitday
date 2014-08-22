@@ -18,8 +18,23 @@
 </head>
 <body onload="getdata()">
 
+    <div data-role="tabs" name="tabUI" dsid="tabUI" id="tabUI">
+    	<div data-role="navbar">
+            <ul>
+                
+                
+            </ul>
+            
+            
+        </div>    
+        
+        
+    </div>
+
         <div data-role="page" style="min-height:800px;" dsid="startScreen" id="startScreen"
         class="type-interior" data-theme="b">
+        
+            
 <!--            !-- mobileheader1 --
             <div data-role="header" data-position="fixed" data-add-back-btn="false" data-back-btn-text="Back"
             data-theme="b" name="mobileheader1" id="startScreen_mobileheader1" class="startScreen_mobileheader1">
@@ -29,7 +44,7 @@
             </div> -->
                 <!-- dayornightlbl -->
                 <div style="-webkit-appearance:none; -moz-appearance:none; appearance:none; border: none !important; box-shadow: none !important;" name="dayornightlbl" id="startScreen_dayornightlbl" dsid="dayornightlbl" data-role="ui-field-contain" class="startScreen_dayornightlbl">
-                <h1 name="mobiletextarea_1" id="startScreen_mobiletextarea_1" tabindex="1" dsid="mobiletextarea_1" data-theme="b" placeholder="" class="startScreen_dayornightlbl">TEST</h1>
+                <h1 name="mobiletextarea_1" id="startScreen_mobiletextarea1" tabindex="1" dsid="mobiletextarea_1" data-theme="b" placeholder="" class="startScreen_dayornightlbl"></h1>
                 </div>
                 <!-- spacer_6 -->
                 <div id="startScreen_spacer_6" data-role="ui-field-contain" dsid="spacer_6" class='mobilespacer startScreen_spacer_6'>
@@ -41,8 +56,6 @@
                 <div data-role="ui-field-contain" class="startScreen_mobiletextarea_3 ">
                     <textarea name="mobiletextarea_3" id="startScreen_mobiletextarea_3" tabindex="2"
                     dsid="mobiletextarea_3" data-theme="b" placeholder="" class="startScreen_mobiletextarea_3">
-                        
-                     
 </textarea>
                 
                 </div>
@@ -52,29 +65,58 @@
                     <textarea name="mobiletextarea_4" id="startScreen_mobiletextarea_4" tabindex="3"
                     dsid="mobiletextarea_4" data-theme="b" placeholder="" class="startScreen_mobiletextarea_4">
 </textarea>
-                    <a href="#details" class="ui-btn">More Details</a>
+                    
                 </div>
             </div>
             <!-- mobilefooter1 -->
             <div data-role="footer" data-position="fixed" class="startScreen_mobilefooter1"
-            name="mobilefooter1" dsid="mobilefooter1" id="startScreen_mobilefooter1" data-theme="b">
+            name="mobilefooter1" dsid="mobilefooter1" id="startScreen_mobilefooter1" data-theme="a">
+                <div data-role="tabs" name="tabUI" dsid="tabUI" id="tabUI" >
+    	<div data-role="navbar" data-transition="none">
+            <ul>
+                <li><a href="#startScreen" data-theme="b" data-ajax="false" data-icon="home" data-transition="none" class="ui-btn-active ui-state-persist">Home</a></li>
+                <li><a href="#details" data-theme="b" data-ajax="false" data-icon="info" data-transition="none">More Info</a></li>
+                
+            </ul>
             
+            
+        </div>    
+        
+        
+    </div>
             </div>
         </div>
  <!--details page -->
-                <div data-role="page" dsid="details" id="details" class="type-interior" data-theme="b"> 
-                    <div style="-webkit-appearance:none; -moz-appearance:none; appearance:none; border: none !important; box-shadow: none !important;" name="dayornightlbl" id="startScreen_dayornightlbl" dsid="dayornightlbl" data-role="ui-field-contain" class="startScreen_dayornightlbl">
-                <h1 name="header" id="details_header" tabindex="1" dsid="header" data-theme="b" placeholder="" class="details_header">TEST</h1>
+    
+                <div data-role="page" dsid="details" style="min-height:800px;" id="details" class="type-interior" data-theme="b"> 
+                    
+                    <div style="-webkit-appearance:none; -moz-appearance:none; appearance:none; border: none !important; box-shadow: none !important;" name="top" id="details_top" dsid="dayornightlbl" data-role="ui-field-contain" class="details_top">
+                <h1 name="header" id="details_header" tabindex="1" dsid="header" data-theme="b" placeholder="" class="details_header"></h1>
                 </div>
                     <div data-role="main" class="ui-content">
                         <!-- sunrisetextarea -->
-                         <textarea name="sunrisetextarea" id="details_sunrisetextarea" tabindex="4" dsid="sunrisetextarea" data-theme="b" placeholder="" class="details_sunrisetextarea">Under Construction, check back soon!
+                         <textarea name="sunrisetextarea" id="details_sunrisetextarea" tabindex="4" dsid="sunrisetextarea" data-theme="b" placeholder="" class="details_sunrisetextarea">
                          </textarea>
                          <textarea name="sunsettextarea" id="details_sunsettextarea" tabindex="5" dsid="sunsettextarea" data-theme="b" placeholder="" class="details_sunsettextarea">
                          </textarea>
-                        <a href="#startScreen" class="ui-btn">Go Back</a>
+                        
                     </div>     
-                    
+                    	<div data-role="footer" data-position="fixed" class="details_footer2"
+            				name="footer2" dsid="footer2" id="details_footer2" data-theme="a">
+            				<div data-role="tabs" name="tabUI" dsid="tabUI" id="tabUI">
+    	<div data-role="navbar" data-transition="none" data-position="center">
+            <ul>
+                <li><a href="#startScreen" data-theme="b" data-ajax="false" data-icon="home" data-transition="none">Home</a></li>
+                <li><a href="#details" data-theme="b" data-ajax="false" data-icon="info" data-transition="none" class="ui-btn-active ui-state-persist">More Info</a></li>
+                
+            </ul>
+            
+            
+        </div>    
+        
+        
+    </div>
+            			</div>
                     
                 </div>
     
@@ -84,6 +126,10 @@
         document.addEventListener('deviceready', function () {
             navigator.splashscreen.hide();
         }, false);
+        $("#startScreen_mobiletextarea_3").attr('readonly', 'true');
+        $("#startScreen_mobiletextarea_4").attr('readonly', 'true');
+        $("#details_sunrisetextarea").attr('readonly', 'true');
+        $("#details_sunsettextarea").attr('readonly', 'true');
     </script>
 </body>
 </html>
