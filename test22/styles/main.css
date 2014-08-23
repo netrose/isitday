@@ -1,3 +1,47 @@
+/*about copyright*/
+.about_aboutcopy{
+    margin: 4px 0px 4px 0px;
+    font-size: 7;
+    -webkit-appearance:none;
+    -moz-appearance:none; 
+    appearance:none;
+    text-decoration: none; font-weight: normal; text-align: center; font-family: "century gothic"; font-size: 24px;
+	margin: 4px 0px 4px 0px;
+	word-wrap: break-word;
+	white-space: normal;
+    border: none;
+    background:transparent;
+    -moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+    -webkit-box-sizing: none;
+	-moz-box-sizing: none;
+	-ms-box-sizing: none;
+	box-sizing: none;
+    
+}
+/*about description*/
+.about_aboutdesc{
+    margin: 4px 0px 4px 0px;
+    font-size: 7;
+    -webkit-appearance:none;
+    -moz-appearance:none; 
+    appearance:none;
+    text-decoration: none; font-weight: normal; text-align: center; font-family: "Tahoma"; font-size: 24px;
+	margin: 4px 0px 4px 0px;
+	word-wrap: break-word;
+	white-space: normal;
+    border: none;
+    background:transparent;
+    -moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+    -webkit-box-sizing: none;
+	-moz-box-sizing: none;
+	-ms-box-sizing: none;
+	box-sizing: none;
+}
+
 /* mobilecontainer1 */
 .ui-content.startScreen_mobilecontainer1 {
 	padding: 15px 15px 15px 15px;
