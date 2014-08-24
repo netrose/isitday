@@ -19,7 +19,7 @@ function getdata() {
 			suntime(lat1,lon1);			
 		};
 		
-		req2.onreadystatechange = function() {
+		req2.onreadystatechange = function () {
 			var state2 = req2.readyState;
 			if (state2 !== 4) { // while the status event is not Done we continue
 			return;
@@ -39,6 +39,7 @@ function getdata() {
             document.getElementById("details_sunsettextarea").value = (twiciv2);
 			sunrisehour = res2.substr(sunrise-8,2);
             sunriseminute = res2.substr(sunrise-5,2);
+            dayornight();
 		};
 		
 		req1.open('GET','http://206.196.111.56:8080/json/');
@@ -51,7 +52,7 @@ function getdata() {
 			req2.open('GET','http://www.corsproxy.com/www.earthtools.org/sun/'+parm1+'/'+parm2+'/'+day+'/'+month+'/99/1');
 			req2.send();
 		}
-    	setTimeout(dayornight, 3000);
+    	
     	function dayornight(){if (hours > sunrisehour && minutes > sunriseminute){
             document.getElementById("startScreen_mobileheader_2").innerHTML = "It is day!";
             
