@@ -5,6 +5,8 @@ function getdata() {
     		var minutes = currentTime.getMinutes();
     		var sunrisehour
 			var sunriseminute
+    		var sunsethour
+    		var sunsetminute
 		req1 = new XMLHttpRequest();
 		req2 = new XMLHttpRequest();
 		
@@ -22,8 +24,9 @@ function getdata() {
 		req2.onreadystatechange = function () {
 			var state2 = req2.readyState;
 			if (state2 !== 4) { // while the status event is not Done we continue
-			return;
-		}
+				return;
+			}
+            
 			res2 = req2.responseText;
 			dawnstart = res2.indexOf("</civil>");
 			duskstart = res2.lastIndexOf("</civil>");
@@ -39,7 +42,25 @@ function getdata() {
             document.getElementById("details_sunsettextarea").value = (twiciv2);
 			sunrisehour = res2.substr(sunrise-8,2);
             sunriseminute = res2.substr(sunrise-5,2);
-            dayornight();
+            sunsetminute = res2.substr(sunset-5,2);
+            sunsethour = res2.substr(sunset-8,2);
+            
+            if (hours > parseInt(sunrisehour) && hours < parseInt(sunsethour)){
+                itisday();
+            }
+            
+            if (hours > parseInt(sunrisehour) && hours == parseInt(sunsethour) && minutes < parseInt(sunsetminute)){
+                itisday();
+            }
+
+            if(hours > parseInt(sunsethour) && hours < parseInt(sunrisehour)){
+                itisnight();
+            }
+
+            if(hours > parseInt(sunsethour) && hours == parseInt(sunrisehour) && minutes < parseInt(sunriseminute)){
+                itisnight();
+            }
+
 		};
 		
 		req1.open('GET','http://206.196.111.56:8080/json/');
@@ -52,16 +73,21 @@ function getdata() {
 			req2.open('GET','http://www.corsproxy.com/www.earthtools.org/sun/'+parm1+'/'+parm2+'/'+day+'/'+month+'/99/1');
 			req2.send();
 		}
-    	
-    	function dayornight(){if (hours > sunrisehour && minutes > sunriseminute){
-            document.getElementById("startScreen_mobileheader_2").innerHTML = "It is day!";
-            
-        }
-    	else{
+    
+    	document.getElementById("startScreen_mobileheader_3").innerHTML= "Time: " + hours + ":" + minutes;
+    
+    	function itisday(){
+        	document.getElementById("startScreen_mobileheader_2").innerHTML = "It is day!";
+    	}
+    
+        function itisnight(){
             document.getElementById("startScreen_mobileheader_2").innerHTML = "It is night!";
+        }
             
+         
             
-        }}
+           
+        
 		
     	document.getElementById("details_header").innerHTML = "Details Page";
 }
