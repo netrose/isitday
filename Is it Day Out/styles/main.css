@@ -1,3 +1,11 @@
+.details_sunrisetextarea{
+    resize: none;
+}
+
+.details_sunsettextarea{
+    resize: none;
+}
+
 .notransition {
   -webkit-transition: none;
   -moz-transition: none;
@@ -8,6 +16,7 @@
 
 /*about copyright*/
 .about_aboutcopy{
+    resize: none;
     margin: 4px 0px 4px 0px;
     font-size: 7;
     -webkit-appearance:none;
@@ -30,6 +39,7 @@
 }
 /*about description*/
 .about_aboutdesc{
+    resize: none;
     margin: 4px 0px 4px 0px;
     font-size: 7;
     -webkit-appearance:none;
@@ -52,15 +62,18 @@
 
 /* mobilecontainer1 */
 .ui-content.startScreen_mobilecontainer1 {
+    resize: none;
 	padding: 15px 15px 15px 15px;
 }
 
 .details_footer2{
+    resize: none;
     min-height:38px;
     margin: 5px 5px 0px -7px;
 }
 /*Details page header*/
 .details_header{
+    resize: none;
     margin: 4px 0px 4px 0px;
     font-size: 5;
     -webkit-appearance:none;
@@ -102,19 +115,23 @@
 
 /* mobiletextarea_3 */
 .startScreen_mobiletextarea_3 {
+    resize: none;
 	margin: 4px 0px 4px 0px;
 }
 /* mobiletextarea_4 */
 .startScreen_mobiletextarea_4 {
+    resize: none;
 	margin: 4px 0px 4px 0px;
 }
 /* mobilefooter1 */
 .startScreen_mobilefooter1 {
+    resize: none;
 	min-height:38px;
     margin: 5px 5px 0px -7px;
 }
 /* dayornightlbl */
 .startScreen_dayornightlbl {
+    resize: none;
 	-webkit-appearance:none;
     -moz-appearance:none; 
     appearance:none;

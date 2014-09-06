@@ -45,22 +45,21 @@ function getdata() {
             sunsetminute = res2.substr(sunset-5,2);
             sunsethour = res2.substr(sunset-8,2);
             
-            if (hours > parseInt(sunrisehour) && hours < parseInt(sunsethour)){
+            var currentseconds = currentTime.getSeconds() + (60 * currentTime.getMinutes()) + (60 * 60 * currentTime.getHours());
+            
+            var sunriseseconds = (60 * sunriseminute) + (60 * 60 * sunrisehour);
+            
+            var sunsetseconds = (60 * sunsetminute) + (60 * 60 * sunsethour);
+
+            if (currentseconds > sunriseseconds && currentseconds < sunsetseconds){
                 itisday();
+            }
+                else{
+                itisnight();
             }
             
-            if (hours > parseInt(sunrisehour) && hours == parseInt(sunsethour) && minutes < parseInt(sunsetminute)){
-                itisday();
-            }
 
-            if(hours > parseInt(sunsethour) && hours < parseInt(sunrisehour)){
-                itisnight();
-            }
-
-            if(hours > parseInt(sunsethour) && hours == parseInt(sunrisehour) && minutes < parseInt(sunriseminute)){
-                itisnight();
-            }
-
+            
 		};
 		
 		req1.open('GET','http://206.196.111.56:8080/json/');
